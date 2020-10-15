@@ -12,6 +12,7 @@ import {
   USER_UPDATE_PROFILE_REQUEST,
   USER_UPDATE_PROFILE_SUCCESS,
   USER_UPDATE_PROFILE_FAIL,
+  USER_DETAILS_RESET,
 } from '../types'
 
 export const userLoginReducer = (state = {}, action) => {
@@ -68,6 +69,8 @@ export const userUpdateProfileReducer = (state = {}, action) => {
       }
     case USER_UPDATE_PROFILE_FAIL:
       return { ...state, error: action.payload, loading: false, success: false }
+    case USER_DETAILS_RESET:
+      return {}
     default:
       return state
   }
